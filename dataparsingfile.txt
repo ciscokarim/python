@@ -1,0 +1,30 @@
+one two three
+two three four
+three four five
+yes
+yes
+YES
+YESS
+yEs
+YES and NO
+NO
+
+
+
+NO
+no
+no
+No
+NOOOO
+logging host 1.1.1.1 managmenet
+logging host 1.1.1.1 management 1.1.1.1 management
+logging host 1.1.1.1.1 management
+logging host 1.1.1.1.1 managemnet 1.1.1.1.1 management
+
+logging host 2.2.2.2 inside
+logging host 2.2.2.2 inside 2.2.2.2 inside
+logging host 2.2.2.2.2 inside
+logging host 2.2.2.2.2 inside 2.2.2.2 inside
+
+0123456789
+123456789
