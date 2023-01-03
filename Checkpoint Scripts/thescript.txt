@@ -1,0 +1,34 @@
+
+### ---------------------------  ###
+### CLI to add new host objects  ###
+### ---------------------------  ###
+
+
+### ------------------------------  ###
+### CLI to add new network objects  ###
+### ------------------------------  ###
+
+
+### ------------------------------  ###
+### CLI to add new service objects  ###
+### ------------------------------  ###
+
+
+### ------------------------------  ###
+### CLI Commands to Add New Groups  ###
+### ------------------------------  ###
+
+add group name NET-G-DNS-EMEA color "forest green" members.1 h-169.10.15.135 members.2 h-169.10.16.38 
+add group name gr-new-ports color "forest green" members.1 http members.2 https members.3 TCP137 members.4 TCP138 members.5 nbname members.6 nbdatagram members.7 UltorsTrojan members.8 UDP1234 members.9 TCP234 members.10 UDP323 
+add group name gr-ASA_ProcessVlan color "forest green" members.1 n-10.4.68.0-24 members.2 n-10.4.211.96-27 members.3 n-10.4.124.0-27 
+add group name gr-new-ports color "forest green" members.1 http members.2 https members.3 TCP137 members.4 TCP138 members.5 nbname members.6 nbdatagram members.7 UltorsTrojan members.8 UDP1234 members.9 TCP234 members.10 UDP323 
+add group name NET-G-DNS-EMEA color "forest green" members.1 h-169.10.15.135-ADEURO04 members.2 h-169.10.16.38-ADEURO01 members.3 h-169.10.15.42-ADEURO02 members.4 h-169.10.53.180-ADEURO03 
+add group name NET-G-DNS-EMEA color "forest green" members.1 h-169.10.15.135-ADEURO04 members.2 h-169.10.16.38-ADEURO01 members.3 h-169.10.15.42-ADEURO02 members.4 h-169.10.53.180-ADEURO03 
+add group name gr-ASA_ProcessVlan color "forest green" members.1 n-10.4.68.0-24 members.2 n-10.4.211.96-27 members.3 n-10.4.124.0-27 members.4 n-10.4.211.224-27 
+add group name NET-G-DNS-EMEA-port color "forest green" members.1 SQL-Ports members.2 https 
+
+### ------------------------------  ###
+### CLI Commands to Add New Rules  ###
+### ------------------------------  ###
+
+add access-section layer "utm-ukAYC_In_Line Security" name "Process Vlans to Splunk Cloud" position 1
