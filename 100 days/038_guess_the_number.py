@@ -1,7 +1,7 @@
 import random
 import os
 
-
+random_num=random.randint()
 random_number=random.randint(1,100)
 print(f"random_number={random_number}")
 answer=0
