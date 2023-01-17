@@ -24,13 +24,13 @@ class car:
 
 #un comment the following and it will be a complete class and object example
 #object definited and attributes printed
-# car1=car("toyota",2010,"carina","red","diesel","auto")
-# print (car1.make)
-# print (car1.model)
-# print (car1.year)
-# print (car1.fuel)
-# print (car1.transmission)
-# print (car1.colour)
+car1=car("toyota",2010,"carina","red","diesel","auto")
+print (car1.make)
+print (car1.model)
+print (car1.year)
+print (car1.fuel)
+print (car1.transmission)
+print (car1.colour)
 #
 # #class function called to perform a function on attributes
-# print(car1.ulzecheck())
+print(car1.ulzecheck())
