@@ -34,7 +34,12 @@ ws=wb.sheets['UTM Form']
 #-------------------------------------------------------------#
 
 frow=int(input("Enter the firt data row :"))
-lrow=int(input("Enter the last data row :"))
+lrow=0
+while frow > lrow: #keep asking util the correct data is entered.
+    lrow=int(input("Enter the last data row :"))
+    if frow > lrow:
+        lrow=int(input("Enter the last data row again (last row must be greater than first row):"))
+
 ppkg_uinput=(input("Enter the name of the utm e.g. utm-plWAR(case-sensitive) :"))
 # ppkg_uinput="utm-plWAR"
 # ppkg_uinput="utm-ukAYC"
@@ -42,7 +47,11 @@ rule_name="Process Vlans"
 rule_comment="CXXXXX AK XX/XX/2022"
 rbasestrow=int(input(f"Enter the starting point in #{ppkg_uinput}# rulebase :"))
 gpsttrow=int(input(f"Enter the starting row for groups: "))
-gpendrow=int(input(f"Enter the ending row for groups: "))
+gpendrow=0
+while gpsttrow > gpendrow: #keep asking until the correct data is entered.
+    gpendrow=int(input(f"Enter the ending row for groups: "))
+    if gpsttrow > gpendrow:
+        gpendrow=int(input("Enter the ending row for groupsagain (last row must be greater than first row):"))
 # group_counter=number_of_groups
 group_rows=[]
 group_item_rows=[]
