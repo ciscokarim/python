@@ -1,0 +1,109 @@
+import json
+
+#######################################################################################################################
+#JSON STRING TO PYHON DICTIONARY
+
+# following is a json string stored in a string variable.
+
+data_json =  """
+{
+	"size": "Medium",
+	"price": 15.67,
+	"toppings": ["Mushrooms", "Extra Cheese", "Pepperoni", "Basil"],
+	"client": {
+		"name": "Jane Doe",
+		"phone": "455-344-234",
+		"email": "janedoe@email.com"
+	}
+}
+"""
+
+# following function loads the data from the string and stores it in a python dictionary.
+# this converts free string data in json format to python dictionary.
+
+py_data_dict = json.loads(data_json)
+
+print(data_json)
+print(py_data_dict)
+print(py_data_dict["size"])
+print(py_data_dict["price"])
+print(py_data_dict["client"])
+
+
+
+#######################################################################################################################
+#PYTHON DICTIONARY TO JSON STRING
+
+
+# followign defines a python dicitonary
+
+user_dict = {
+
+    "name": "john",
+    "age": "21",
+    "address": "5, longsdale drive, sheffield",
+    "nationality": "british"
+}
+
+
+data_json_string = json.dumps(user_dict)
+
+print(type(user_dict))
+print(user_dict)
+print(type(data_json_string))
+print(data_json_string)
+
+# following adds indentation to the string, this will show it again
+# like a string taken from a json file.
+
+data_json_string = json.dumps(user_dict, indent=4)
+
+print(type(user_dict))
+print(user_dict)
+print(type(data_json_string))
+print(data_json_string)
+
+
+#######################################################################################################################
+#load a json string file and make python dictionary out of it.
+
+with open("orders.json") as json_orders_file:
+    python_orders_dict = json.load(json_orders_file)
+
+
+print(type(python_orders_dict))
+print(python_orders_dict)
+
+
+#At this stage because you have the json string loaded as python dict.
+#you can make updates and alterations to it.
+#you can for example change a key value.
+
+
+print(f'now price of the first order in the list is {python_orders_dict["orders"][0]["price"]}')
+python_orders_dict["orders"][0]["price"] = 19.67
+print(f'new price of the first order in the list is {python_orders_dict["orders"][0]["price"]}')
+
+
+with open("orders_new.json", "a") as json_new_orders_file:
+    json.dump(python_orders_dict, json_new_orders_file, indent=4)
+
+
+#you can do cat orders.json & orders_new.json to compare the new and old files.
+
+#######################################################################################################################
+#load a python dict file and make json string out of it.
+
+with open("orders.py") as py_dict_file:
+    py_dict_file_string = py_dict_file.read()
+
+print(type(py_dict_file_string))
+# py_new_dict=json.loads(py_dict_file_string)
+
+
+
+# print(type(py_new_dict))
+
+# py_new_dict=dict(py_new_dict)
+
+# print(type(py_new_dict))
