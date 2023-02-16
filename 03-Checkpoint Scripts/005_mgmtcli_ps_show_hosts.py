@@ -179,50 +179,7 @@ def show_cmd_getter(show_cmd):
         
         counter = 0
 
-        # if total <= 500:
-        #     limit = 500
-        #     objects_batch_ctr+=1
-        #     print(f"total = {total}, offset = {offset} and limit = {limit}")
-        #     show_items_holder=run(f"mgmt_cli.exe {show_cmd} offset {offset} limit {limit} -f json -d {dn} -m {ioms} --session-id {sid}")
-        #     show_items += show_items_holder
-        #     show_items.replace("objects",f"objects_batch_{objects_batch_ctr}")
-            
-        #     py_data_dict = json.loads(show_items_holder)
-        #     # for items in py_data_dict:
-        #     #     print(f"{items} ###############################")
-            
-        #     print(py_data_dict["total"])
-        #     list_holder = list_holder + py_data_dict["objects"]
-            
-        #     counter+=1
-        #     print(f"counter under 500 is  {counter}")
-            
-        #     break
-
-        # # counter = 0
-        # if total >= 500: 
-            
-        #     print(f"total = {total}, offset = {offset} and limit = {limit}")
-        #     show_items_holder=run(f"mgmt_cli.exe {show_cmd} offset {offset} limit {limit} -f json -d {dn} -m {ioms} --session-id {sid}")
-            
-        #     py_data_dict = json.loads(show_items_holder)
-        #     # for items in py_data_dict:
-        #     #     print(f"{items} ###############################")
-            
-        #     print(py_data_dict["total"])
-        #     list_holder = list_holder + py_data_dict["objects"]
-        #     counter+=1
-
-        #     print(f"counter over 500 is {counter}")
-
-        #     limit = 500
-        #     total = total - 500
-        #     offset += 500
-
-        #     show_items+=show_items_holder
-        #     show_items.replace("objects",f"objects_batch_{objects_batch_ctr}")
-        
-        if total >= 500:
+        if total <= 500:
             limit = 500
             objects_batch_ctr+=1
             print(f"total = {total}, offset = {offset} and limit = {limit}")
@@ -241,6 +198,49 @@ def show_cmd_getter(show_cmd):
             print(f"counter under 500 is  {counter}")
             
             break
+
+        # counter = 0
+        if total >= 500: 
+            
+            print(f"total = {total}, offset = {offset} and limit = {limit}")
+            show_items_holder=run(f"mgmt_cli.exe {show_cmd} offset {offset} limit {limit} -f json -d {dn} -m {ioms} --session-id {sid}")
+            
+            py_data_dict = json.loads(show_items_holder)
+            # for items in py_data_dict:
+            #     print(f"{items} ###############################")
+            
+            print(py_data_dict["total"])
+            list_holder = list_holder + py_data_dict["objects"]
+            counter+=1
+
+            print(f"counter over 500 is {counter}")
+
+            limit = 500
+            total = total - 500
+            offset += 500
+
+            show_items+=show_items_holder
+            show_items.replace("objects",f"objects_batch_{objects_batch_ctr}")
+        
+#         if total >= 500:
+#             limit = 500
+#             objects_batch_ctr+=1
+#             print(f"total = {total}, offset = {offset} and limit = {limit}")
+#             show_items_holder=run(f"mgmt_cli.exe {show_cmd} offset {offset} limit {limit} -f json -d {dn} -m {ioms} --session-id {sid}")
+#             show_items += show_items_holder
+#             show_items.replace("objects",f"objects_batch_{objects_batch_ctr}")
+            
+#             py_data_dict = json.loads(show_items_holder)
+#             # for items in py_data_dict:
+#             #     print(f"{items} ###############################")
+            
+#             print(py_data_dict["total"])
+#             list_holder = list_holder + py_data_dict["objects"]
+            
+#             counter+=1
+#             print(f"counter under 500 is  {counter}")
+            
+#             break
 
     # print(show_hosts)
     print(type(list_holder))
